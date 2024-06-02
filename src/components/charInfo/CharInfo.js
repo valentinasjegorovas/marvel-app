@@ -53,7 +53,7 @@ const View = ({ char }) => {
     thumbnail ===
     'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg'
   ) {
-    imgStyle = { objectFit: 'contain' };
+    imgStyle = { objectFit: 'unset' };
   }
 
   return (
@@ -76,9 +76,7 @@ const View = ({ char }) => {
       <div className="char__comics">Comics:</div>
       <ul className="char__comics-list">
         {comics.length > 0 ? null : 'There are no comics with this character'}
-        {comics.map((item, i) => {
-          // eslint-disable-next-line
-          if (i > 9) return;
+        {comics.slice(0, 9).map((item, i) => {
           return (
             <li key={i} className="char__comics-item">
               {item.name}

@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { MainPage, ComicsPage, Page404, SingleComicPage } from '../pages';
 import AppHeader from '../appHeader/AppHeader';
+import AppBanner from '../appBanner/AppBanner';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
               <ComicsPage />
             </Route>
             <Route exact path="/comics/:comicId">
+              <AppBanner />
               <SingleComicPage />
             </Route>
             <Route path="*">
